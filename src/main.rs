@@ -51,24 +51,25 @@ async fn request_handler(_client: HttpClient, req: Request<Body>) -> Result<Resp
             let body_bytes = hyper::body::to_bytes(body).await.unwrap();
             let encoded: String = form_urlencoded::byte_serialize(&body_bytes).collect();
             //println!("encoded: {}", encoded);
-            let target_url = format!("https://webhook.site/11a4de56-aadd-46d0-8357-98bdb2412a3c?msg={}", encoded).parse::<hyper::Uri>().unwrap();
+            let target_url = format!("https://httpbin.org/get?msg={}", encoded).parse::<hyper::Uri>().unwrap();
 
             let mut request_builder = Request::builder()
             .method(Method::GET)
             .uri(target_url)
             .body(Body::from(""))
             .unwrap();
-            println!("chegou até aqui");
-            tokio::task::spawn(
-            async move {
+            
+            //tokio::task::spawn(
+            //async move {
                     
-                        if let Err(err) = _client.request(request_builder).await {
-                            println!("Error in HTTPS request: {:?}", err);
-                        }
-                    }
-            );
-            println!("passou daqui");
-            let mut resp = Response::new(Body::from(""));
+                        //if let Err(err) = 
+                        let response = _client.request(request_builder).await?; // {
+                        //    println!("Error in HTTPS request: {:?}", err);
+                        //}
+                   // }
+            //);
+            
+            let mut resp = Response::new(response.into_body());
             *resp.status_mut() = StatusCode::OK;
             return Ok(resp);   
             //Ok(Response::new(res.into_body()))
