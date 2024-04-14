@@ -17,7 +17,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         wasmedge_rustls_api::ClientConfig::default(),
     );
     let client  = Client::builder().build::<_, hyper::Body>(https);
-
+    
     let listener = TcpListener::bind(addr).await?;
     println!("Listening on http://{}", addr);
     loop {
@@ -50,29 +50,21 @@ async fn request_handler(_client: HttpClient, req: Request<Body>) -> Result<Resp
             let (parts, body) = req.into_parts();
             let body_bytes = hyper::body::to_bytes(body).await.unwrap();
             let encoded: String = form_urlencoded::byte_serialize(&body_bytes).collect();
-            //println!("encoded: {}", encoded);
+            println!("encoded: {}", encoded);
+            
             let target_url = format!("https://httpbin.org/get?msg={}", encoded).parse::<hyper::Uri>().unwrap();
-
-            let mut request_builder = Request::builder()
+            
+            let request_builder = Request::builder()
             .method(Method::GET)
             .uri(target_url)
             .body(Body::from(""))
             .unwrap();
             
-            //tokio::task::spawn(
-            //async move {
-                    
-                        //if let Err(err) = 
-                        let response = _client.request(request_builder).await?; // {
-                        //    println!("Error in HTTPS request: {:?}", err);
-                        //}
-                   // }
-            //);
+            let response = _client.request(request_builder).await?; 
             
             let mut resp = Response::new(response.into_body());
             *resp.status_mut() = StatusCode::OK;
             return Ok(resp);   
-            //Ok(Response::new(res.into_body()))
         },
 
         // Return the 404 Not Found for other routes.

@@ -1,0 +1,11 @@
+/Users/johnf/git/wasmedge/wasmedge-proxy/target/wasm32-wasi/release/deps/libgetrandom-c8e19541f68f1b29.rmeta: /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/lib.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/error.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/util.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/error_impls.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/wasi.rs
+
+/Users/johnf/git/wasmedge/wasmedge-proxy/target/wasm32-wasi/release/deps/libgetrandom-c8e19541f68f1b29.rlib: /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/lib.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/error.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/util.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/error_impls.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/wasi.rs
+
+/Users/johnf/git/wasmedge/wasmedge-proxy/target/wasm32-wasi/release/deps/getrandom-c8e19541f68f1b29.d: /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/lib.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/error.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/util.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/error_impls.rs /Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/wasi.rs
+
+/Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/lib.rs:
+/Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/error.rs:
+/Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/util.rs:
+/Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/error_impls.rs:
+/Users/johnf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.1.16/src/wasi.rs:
