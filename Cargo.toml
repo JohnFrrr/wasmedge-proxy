@@ -1,3 +1,9 @@
+[patch.crates-io]
+tokio = { git = "https://github.com/second-state/wasi_tokio.git", branch = "v1.36.x" }
+socket2 = { git = "https://github.com/second-state/socket2.git", branch = "v0.5.x" }
+hyper = { git = "https://github.com/second-state/wasi_hyper.git", branch = "v0.14.x" }
+reqwest = { git = "https://github.com/second-state/wasi_reqwest.git", branch = "0.11.x" }
+
 [package]
 name = "wasmedge_hyper_proxy"
 version = "0.1.0"
@@ -9,5 +15,15 @@ tokio_wasi = { version = "1", features = ["rt", "macros", "net", "time", "io-uti
 http-body-util = "0.1.0-rc.2"
 pretty_env_logger = "0.4.0"
 wasmedge_rustls_api = { version = "0.1", features = [ "tokio_async" ] }
+reqwest = { version = "0.11", default-features = false, features = ["rustls-tls"] }
+tokio = { version = "1", features = ["rt", "macros", "net", "time"] }
 wasmedge_hyper_rustls = "0.1.0"
 url = "2.5.0"
+
+
+[build]
+target="wasm32-wasi"
+rustflags = ["--cfg", "wasmedge", "--cfg", "tokio_unstable"]
+
+[target.wasm32-wasi]
+runner = "wasmedge"
